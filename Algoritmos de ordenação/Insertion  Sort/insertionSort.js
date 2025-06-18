@@ -1,28 +1,21 @@
-function insertionSort(list){
+function insertionSort(arr){
     // for começa com no primeiro índice pq tem que comparar com o índice anterior
-    for(let i = 1; i < list.length; i++){
-        let analise = i;
-        while( list[analise] < list[analise - 1]){
+    for(let i = 1; i < arr.length; i++){
+        while(arr[i] < arr[i - 1]){
             // Recebe o Valor do indice atual
-            let itemAtual = list[analise];
-
-            // Recebe o valor do índice anterior
-            let itemAnterior = list[analise - 1];
-            console.log(itemAtual, itemAnterior, 'valores')
+            let itemAtual = arr[i];
         
             // O índice atual recebe o valor anterior
-            list[analise] = itemAnterior;
+            arr[i] = arr[i -1];
 
             // O índice anterior recebe o valor do item atual
-            list[analise - 1] = itemAtual;
-            console.log(list[analise], analise, 'valor e indice')
+            arr[i - 1] = itemAtual;
             
-            analise--
-            console.log(list[analise], analise, 'valor e indice')
+            i--
         }
     }
-    return list;
+    return arr;
 }
 
-const lista = [5,2,6,9,8,7,3];
+const lista = [5,10,6,9,8,7,3];
 console.log(insertionSort(lista));
